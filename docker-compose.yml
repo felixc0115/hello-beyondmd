@@ -1,10 +1,10 @@
 version: "3.8"
-services:
-  app:
-    container_name: app
-    image: app
+services: #all the services required to run your app. ex. frontend, backend, database
+  frontend: #defining a service called frontend
+    container_name: frontend #naming the container
+    image: frontend #naming the image
     build:
-      context: .
+      context: . #directory of the Dockerfile
       dockerfile: Dockerfile
     ports:
-      - 8080:8080
+      - 8080:8080 #use port 8080 to listen for requests
