@@ -1,4 +1,11 @@
 #create base image from nginx image
-FROM nginx
+FROM nginx:alpine
 # copy files
-COPY . /usr/share/nginx/html
+
+WORKDIR /hello-beyondmd
+
+COPY . .
+
+COPY ./nginx.conf /etc/nginx/nginx.conf
+
+EXPOSE 3000
